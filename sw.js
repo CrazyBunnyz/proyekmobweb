@@ -1,3 +1,8 @@
+navigator.serviceWorker.getRegistrations().then(function(registrations) {
+ for(let registration of registrations) {
+  registration.unregister()
+} })
+
 self.addEventListener('install', function(event) {
   //console.log("install sw done");
   event.waitUntil(
