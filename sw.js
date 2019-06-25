@@ -1,23 +1,19 @@
-navigator.serviceWorker.getRegistrations().then(function(registrations) {
- for(let registration of registrations) {
-  registration.unregister()
-} })
 self.addEventListener('install', function(event) {
   //console.log("install sw done");
   event.waitUntil(
     caches.open('first-app').then(function(cache) {
       //console.log("first app opened");
       return cache.addAll([
-          'index.html',
-           'app.js',
-           'src/js/script.js',
-           'src/css/style.css',
-           'src/img/background.jpg',
-           'src/img/player1.png',
-           'src/img/logo.png',
-          'src/manifest.json',
-          'offline.html',
-          'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+          '/index.html',
+           '/app.js',
+           '/src/js/script.js',
+           '/src/css/style.css',
+           '/src/img/background.jpg',
+           '/src/img/player1.png',
+           '/src/img/logo.png',
+           '/src/manifest.json',
+           '/offline.html',
+           'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
       ]);
     })
   );
